@@ -3,3 +3,6 @@ pnpm lint-staged
 
 # Run type check
 pnpm run type-check
+
+# Run build to catch build-time errors
+pnpm run build

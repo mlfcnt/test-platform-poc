@@ -28,6 +28,11 @@ export function ClientUserButton() {
 }
 
 export function ClientClerkProvider({children}: {children: ReactNode}) {
+  // Don't render ClerkProvider during build/prerendering if no publishable key
+  if (typeof window === 'undefined' && !process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY) {
+    return <>{children}</>;
+  }
+  
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <ClerkProvider>{children}</ClerkProvider>
