@@ -67,7 +67,7 @@ export default function TestResults() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Résultats introuvables</h1>
-          <p className="text-gray-600">Ces résultats n'existent pas ou ont expiré.</p>
+          <p className="text-gray-600">Ces résultats n&apos;existent pas ou ont expiré.</p>
         </div>
       </div>
     )
@@ -167,7 +167,7 @@ export default function TestResults() {
           </div>
 
           <div className="bg-white rounded-lg shadow-sm p-8">
-            <h2 className="text-xl font-bold text-orange-800 mb-4">Axes d'amélioration</h2>
+            <h2 className="text-xl font-bold text-orange-800 mb-4">Axes d&apos;amélioration</h2>
             <ul className="space-y-2">
               {result.areasForImprovement.map((area, index) => (
                 <li key={index} className="flex items-start space-x-2">
@@ -208,7 +208,7 @@ export default function TestResults() {
             onClick={() => window.location.href = '/'}
             className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-3 px-6 rounded-lg transition-colors"
           >
-            Retour à l'accueil
+            Retour à l&apos;accueil
           </button>
         </div>
       </div>

@@ -129,32 +129,13 @@ export default function TakeTest() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Test introuvable</h1>
-          <p className="text-gray-600">Ce test n'existe pas ou a expiré.</p>
+          <p className="text-gray-600">Ce test n&apos;existe pas ou a expiré.</p>
         </div>
       </div>
     )
   }
 
-  if (submitted) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="max-w-md text-center">
-          <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Test soumis !</h1>
-          <p className="text-gray-600 mb-4">
-            Merci {candidateName}. Vos réponses sont en cours d'évaluation.
-          </p>
-          <p className="text-sm text-gray-500">
-            Vous recevrez vos résultats bientôt.
-          </p>
-        </div>
-      </div>
-    )
-  }
+  // Submitted state removed for now - can be re-added when needed
 
   if (!started) {
     return (
@@ -244,7 +225,7 @@ export default function TakeTest() {
           ) : currentQ.type?.toLowerCase().includes('audio') ? (
             <div className="space-y-3">
               <div className="text-sm text-red-600 bg-red-50 p-3 rounded-lg">
-                ⚠️ Cette question nécessite un fichier audio qui n'est pas disponible dans ce POC. Répondez selon votre compréhension.
+                ⚠️ Cette question nécessite un fichier audio qui n&apos;est pas disponible dans ce POC. Répondez selon votre compréhension.
               </div>
               <textarea
                 value={answers[currentQ.id] || ''}
