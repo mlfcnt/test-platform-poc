@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     const { testId, candidateName, answers, testData } = body
 
     // Construire le prompt d'évaluation
-    const questionsAndAnswers = testData.questions.map((q: any) => ({
+    const questionsAndAnswers = testData.questions.map((q: { id: string; content: string; type: string; points: number; expectedAnswer?: string }) => ({
       question: q.content,
       type: q.type,
       points: q.points,
@@ -40,7 +40,7 @@ TITRE DU TEST: ${testData.title}
 DESCRIPTION: ${testData.description}
 
 QUESTIONS ET RÉPONSES:
-${questionsAndAnswers.map((qa, i) => `
+${questionsAndAnswers.map((qa: { question: string; type: string; points: number; candidateAnswer: string; expectedAnswer?: string }, i: number) => `
 Question ${i + 1} (${qa.points} points):
 ${qa.question}
 

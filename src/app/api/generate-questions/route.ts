@@ -76,6 +76,11 @@ Retourne uniquement cette nouvelle question dans le format attendu.`
 
       // Schema simplifié pour une seule question
       responseSchema = z.object({
+        plan: z.object({
+          introduction: z.string(),
+          categories: z.array(QuestionCategorySchema),
+          totalQuestions: z.number()
+        }),
         questions: z.array(QuestionSchema).length(1)
       })
     } else {
