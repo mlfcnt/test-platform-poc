@@ -1,7 +1,11 @@
-import { openai } from '@ai-sdk/openai'
+import { createOpenAI } from '@ai-sdk/openai'
 import { generateObject } from 'ai'
 import { z } from 'zod'
 import { NextRequest, NextResponse } from 'next/server'
+
+const openai = createOpenAI({
+  apiKey: process.env.OPENAI_API_KEY
+})
 
 const EvaluationSchema = z.object({
   overallScore: z.number().min(0).max(100),
