@@ -127,22 +127,22 @@ export default function TestResults() {
         <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
           <h2 className="text-xl font-bold text-gray-900 mb-6">Détail par question</h2>
           <div className="space-y-6">
-            {result.questionEvaluations.map((eval, index) => (
-              <div key={eval.questionId} className="border border-gray-200 rounded-lg p-6">
+            {result.questionEvaluations.map((evaluation, index) => (
+              <div key={evaluation.questionId} className="border border-gray-200 rounded-lg p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-medium text-gray-900">Question {index + 1}</h3>
-                  <span className="text-sm font-medium text-blue-600">{eval.score} points</span>
+                  <span className="text-sm font-medium text-blue-600">{evaluation.score} points</span>
                 </div>
                 
                 <div className="space-y-4">
                   <div>
                     <h4 className="text-sm font-medium text-gray-700 mb-2">Feedback</h4>
-                    <p className="text-gray-600 text-sm">{eval.feedback}</p>
+                    <p className="text-gray-600 text-sm">{evaluation.feedback}</p>
                   </div>
                   
                   <div>
                     <h4 className="text-sm font-medium text-gray-700 mb-2">Suggestions</h4>
-                    <p className="text-gray-600 text-sm">{eval.suggestions}</p>
+                    <p className="text-gray-600 text-sm">{evaluation.suggestions}</p>
                   </div>
                 </div>
               </div>
