@@ -27,7 +27,6 @@ export default function TakeTest() {
   const [answers, setAnswers] = useState<Record<string, string>>({})
   const [candidateName, setCandidateName] = useState('')
   const [started, setStarted] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
